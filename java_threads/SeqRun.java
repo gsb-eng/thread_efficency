@@ -13,12 +13,13 @@ public class SeqRun {
         long start_time = System.currentTimeMillis();
 
         while(loop_counter <= count) {
-            loop_counter--;
+            loop_counter++;
         }
+
         long end_time = System.currentTimeMillis();
         long diff_time = end_time - start_time;
 
-        System.out.println("Time taken in milli seconds " + diff_time);
+        System.out.println(diff_time);
     }
 }
 

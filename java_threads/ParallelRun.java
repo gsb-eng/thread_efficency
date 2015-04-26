@@ -3,6 +3,7 @@
 
 import java.util.Date;
 import java.lang.Thread;
+import java.util.concurrent.TimeUnit;
 
 
 public class ParallelRun extends Thread{
@@ -16,16 +17,16 @@ public class ParallelRun extends Thread{
     public void run() {
 
         int loop_counter = 1;
-        
+        System.out.println(number);
         while(loop_counter <= number) {
-            loop_counter--;
+            loop_counter++;
         }
     }
 
     public static void main(String[] args) throws Exception {
 
         int loop_counter = 1;
-        int count = 50000000;
+        int count = 500000000;
         long start_time = System.currentTimeMillis();
 
         ParallelRun t1 = new ParallelRun(count/2);
@@ -38,7 +39,9 @@ public class ParallelRun extends Thread{
         long end_time = System.currentTimeMillis();
         long diff_time = end_time - start_time;
 
-        System.out.println("Time taken in milli seconds " + diff_time);
+        //Timeunit.MILLISECONDS.toSeconds(diff_time)
+        System.out.println(diff_time);
+        System.out.println(((diff_time)/1000)*60);
     }
 }
 
