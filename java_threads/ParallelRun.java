@@ -17,9 +17,14 @@ public class ParallelRun extends Thread{
     public void run() {
 
         int loop_counter = 1;
-
-        while(loop_counter <= number) {
-            loop_counter++;
+        int i;
+        //while(loop_counter <= number) {
+        //    loop_counter++;
+        //    System.out.println(loop_counter);
+        //}
+        for(loop_counter=1; loop_counter<number; loop_counter++){
+            i = 1;
+           //System.out.println(loop_counter);
         }
     }
 
@@ -29,14 +34,15 @@ public class ParallelRun extends Thread{
         int count = 500000000;
         long start_time = System.currentTimeMillis();
 
-        ParallelRun t1 = new ParallelRun(count/4);
-        ParallelRun t2 = new ParallelRun(count/4);
-        ParallelRun t3 = new ParallelRun(count/4);
-        ParallelRun t4 = new ParallelRun(count/4);
+        ParallelRun t1 = new ParallelRun(count/5);
+        ParallelRun t2 = new ParallelRun(count/5);
+        ParallelRun t3 = new ParallelRun(count/5);
+        ParallelRun t4 = new ParallelRun(count/5);
+        ParallelRun t5 = new ParallelRun(count/5);
 
-        t1.start(); t2.start(); t3.start(); t4.start();
+        t1.start(); t2.start(); t3.start(); t4.start(); t5.start();
 
-        t1.join(); t2.join(); t3.join(); t4.join();
+        t1.join(); t2.join(); t3.join(); t4.join(); t5.join();
 
         long end_time = System.currentTimeMillis();
         long diff_time = end_time - start_time;
