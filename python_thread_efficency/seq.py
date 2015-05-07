@@ -1,15 +1,29 @@
 import time
 
 
+max_size = 5000000
+
+
 def loop_it(n):
     while n > 0:
-        n -= 1
+        if n > max_size:
+            loop(max_size)
+            n -= max_size
+        else:
+            loop(n)
+            n = -1
 
-LOOP_COUNT = 50000000
+
+def loop(n):
+    for i in xrange(n):
+        pass
+
+
+LOOP_COUNT = 500000000
 
 start_time = time.time()
 
-loop_it(LOOP_COUNT)
+loop(LOOP_COUNT)
 
 end_time = time.time()
 
