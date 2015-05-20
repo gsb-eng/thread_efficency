@@ -35,7 +35,7 @@ def sum_of_squares(n):
     print(time.time() - st)
 
 
-def seq_run():
+def parallel_run():
     start_time = time.time()
     t1 = Thread(target=loop_it, args=(5000000*10, ))
     t1.start()
@@ -51,4 +51,4 @@ def seq_run():
     print end_time - start_time
 
 if __name__ == "__main__":
-    seq_run()
+    parallel_run()
